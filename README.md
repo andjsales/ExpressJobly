@@ -2,6 +2,7 @@
 
 # Prerequisites
 
+Install the project requirements:
 ```
 npm init
 npm install
@@ -9,7 +10,6 @@ npm install
 
 Node, Express, and Postgres
 
-# Requirements
 
 # Usage
 
