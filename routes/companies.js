@@ -50,9 +50,21 @@ router.post("/", ensureLoggedIn, async function (req, res, next) {
  * Authorization required: none
  */
 
-router.get("/", async function (req, res, next) {
+const validateQuery = (req, res, next) => {
+  const { minEmployees, maxEmployees } = req.query;
+
+  if (isNaN(parseInt(minEmployees)) || isNaN(parseInt(maxEmployees))) {
+    return res.status(400).json({ error: "minEmployees and maxEmployees must be numbers" });
+  }
+
+  next();
+};
+
+
+router.get('/', validateQuery, async function (req, res, next) {
   try {
-    const companies = await Company.findAll();
+    const { name, minEmployees, maxEmployees } = req.query;
+    const companies = await Company.findAll({ name, minEmployees, maxEmployees });
     return res.json({ companies });
   } catch (err) {
     return next(err);
