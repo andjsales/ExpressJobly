@@ -12,6 +12,8 @@ const userAuthSchema = require("../schemas/userAuth.json");
 const userRegisterSchema = require("../schemas/userRegister.json");
 const { BadRequestError } = require("../expressError");
 
+// Apply similar checks for update and delete routes
+
 /** POST /auth/token:  { username, password } => { token }
  *
  * Returns JWT token which can be used to authenticate further requests.

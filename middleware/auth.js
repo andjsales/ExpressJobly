@@ -7,6 +7,15 @@ const { SECRET_KEY } = require("../config");
 const { UnauthorizedError } = require("../expressError");
 
 
+function requireAdmin(req, res, next) {
+  // Assuming user role is stored in req.user after authentication
+  if (req.user && req.user.role === 'admin') {
+    return next();
+  } else {
+    return res.status(403).json({ message: 'This action requires admin privileges.' });
+  }
+}
+
 /** Middleware: Authenticate user.
  *
  * If a token was provided, verify it, and, if valid, store the token payload
@@ -46,4 +55,5 @@ function ensureLoggedIn(req, res, next) {
 module.exports = {
   authenticateJWT,
   ensureLoggedIn,
+  requireAdmin
 };
