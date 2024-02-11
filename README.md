@@ -2,13 +2,16 @@
 
 # Prerequisites
 
+Install the project requirements:
+```
+npm init
+npm install
+```
+
 Node, Express, and Postgres
 
-# Requirements
 
-# Jobly Backend
-
-This is the Express backend for Jobly, version 2.
+# Usage
 
 To run this:
 
@@ -17,3 +20,7 @@ To run this:
 To run the tests:
 
     jest -i
+
+# Routes
+
+http://localhost:3001/companies
