@@ -2,6 +2,11 @@
 
 # Prerequisites
 
+```
+npm init
+npm install
+```
+
 Node, Express, and Postgres
 
 # Requirements
