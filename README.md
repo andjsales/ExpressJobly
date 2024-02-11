@@ -20,3 +20,7 @@ To run this:
 To run the tests:
 
     jest -i
+
+# Routes
+
+http://localhost:3001/companies
