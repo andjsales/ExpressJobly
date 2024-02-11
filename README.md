@@ -1,5 +1,11 @@
 # ExpressJobly
 
+# Prerequisites
+
+Node, Express, and Postgres
+
+# Requirements
+
 # Jobly Backend
 
 This is the Express backend for Jobly, version 2.
