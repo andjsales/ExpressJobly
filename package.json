@@ -1,7 +1,7 @@
 {
   "name": "jobly-solution",
   "version": "2.0.0",
-  "description": "",
+  "description": "# Prerequisites",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -15,7 +15,7 @@
     ]
   },
   "keywords": [],
-  "author": "",
+  "author": "Andrew Sales",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -30,6 +30,7 @@
     "pg": "^8.3.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "supertest": "^5.0.0-0"
   }
 }
