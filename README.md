@@ -47,11 +47,11 @@ GET /companies
 
 /companies Filters
 
-- `name`: Filters companies by name
 - `minEmployees`: Filters companies to those with at least this number of employees
 - `maxEmployees`: Filters companies to those with no more than this number of employees
 
-Example: `/companies?name=net&minEmployees=50`
+Example:
+http://localhost:3001/companies?minEmployees=10&maxEmployees=50
 
 POST /companies
 - Create a new company
