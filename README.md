@@ -45,6 +45,14 @@ Port: http://localhost:3001/
 GET /companies
 - Get a list of companies, with optional filtering
 
+/companies Filters
+
+- `name`: Filters companies by name
+- `minEmployees`: Filters companies to those with at least this number of employees
+- `maxEmployees`: Filters companies to those with no more than this number of employees
+
+Example: `/companies?name=net&minEmployees=50`
+
 POST /companies
 - Create a new company
 
