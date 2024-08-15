@@ -1,113 +1,89 @@
-# ExpressJobly
+# Jobly
 
-# Requirements 
+## Description
 
-Node.js
-PostgreSQL
-Express
-JWT for authentication/authorization
+Jobly is a comprehensive backend system designed to manage users, companies, and job listings. Built with Node.js, Express, and PostgreSQL, it provides RESTful APIs to interact with a database, ensuring efficient data management and secure authentication mechanisms via JWT.
 
-# Prerequisites
+## Features
 
-Install the project requirements:
+- User Management: Register, authenticate, and manage user profiles
+- Company Management: Create, update, retrieve, and delete company profiles.
+- Job Management: Post job listings, update details, and search for jobs based on various criteria.
+- Authentication and Authorization: Secure access with JWT tokens and role-based access control.
+
+## Requirements
+
+- Node.js
+- PostgreSQL
+- Express
+- JWT for authentication/authorization
+
+## Setup
+
+### Install the project requirements:
 
 ```
 npm init
 npm install
 ```
 
-Set up Database: 
+### Set up Database:
 
 ```
 createdb jobly
 createdb jobly_test
 psql jobly < data.sql
 ```
+
 # Usage
 
-To run:
+To start:
+
 ```
 nodemon server.js
 ```
+
+## Routes
+
+### Companies
+
+- GET /companies: List all companies, with optional filtering by employee count.
+- POST /companies: Create a new company.
+- GET /companies/
+  : Retrieve details of a specific company.
+- PUT /companies/
+  : Update a specific company.
+- DELETE /companies/
+  : Delete a specific company.
+
+### Jobs
+
+- GET /jobs: List all jobs, with optional filtering.
+- POST /jobs: Create a new job.
+- GET /jobs/
+  : Retrieve job details.
+- PUT /jobs/
+  : Update a specific job.
+- DELETE /jobs/
+  : Delete a specific job.
+
+### Authentication
+
+- POST /auth/register: Register a new user.
+- POST /auth/token: Authenticate a user and return a token.
+
+### Users
+
+- GET /users: List all users.
+- GET /users/
+  : Retrieve user details.
+- PATCH /users/
+  : Update a user.
+- DELETE /users/
+  : Delete a user.
 
 # Testing
 
 ```
 jest -i
 ```
-
-# Routes
-
-Port: http://localhost:3001/
-
-## Companies
-
-GET /companies
-- Get a list of companies, with optional filtering
-
-/companies Filters
-
-- `minEmployees`: Filters companies to those with at least this number of employees
-- `maxEmployees`: Filters companies to those with no more than this number of employees
-
-Example:
-http://localhost:3001/companies?minEmployees=10&maxEmployees=50
-
-POST /companies
-- Create a new company
-
-GET /companies/:handle
-- Get details of a company
-
-PUT /companies/:handle
-- Update a company
-
-DELETE /companies/:handle
-- Delete a company
-
-## Jobs
-
-GET /jobs
-- Get a list of jobs, with optional filtering
-
-POST /jobs
-- Create a new job
-
-GET /jobs/:id
-- Get details of a job
-
-PUT /jobs/:id
-- Update a job 
-
-DELETE /jobs/:id
-- Delete a job 
-
-## Auth
-
-POST /auth/register
-- Register a new user
-
-POST /auth/token 
-- Authenticate a user and return a token
-
-## Users
-
-GET /users
-- Get a list of users
-
-GET /users/:username
-- Get details of a user
-
-PATCH /users/:username
-- Update a user
-
-DELETE /users/:username
-- Delete a user
-
-## GET /companies Filters
-
-- `name`: Filters companies by name. Case-insensitive and partial matches are supported.
-- `minEmployees`: Filters companies to those with at least this number of employees.
-- `maxEmployees`: Filters companies to those with no more than this number of employees.
-
-Example: `/companies?name=net&minEmployees=50`
