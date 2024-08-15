@@ -35,7 +35,7 @@ createdb jobly_test
 psql jobly < data.sql
 ```
 
-# Usage
+## Usage
 
 To start:
 
