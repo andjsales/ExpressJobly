@@ -82,7 +82,7 @@ nodemon server.js
 - DELETE /users/
   : Delete a user.
 
-# Testing
+## Testing
 
 ```
 jest -i
